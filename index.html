@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es" class="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sayoaris - Clínica Estética</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ff8fab",
+              "accent-gold": "#d4af34",
+              "background-light": "#fdfffd",
+              "background-dark": "#080708",
+              "text-main": "#080708",
+              "neutral-soft": "#f3f0f1",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+        min-height: max(884px, 100dvh);
+      }
+      .gold-gradient-border {
+        border-bottom: 2px solid #d4af34;
+        width: 40px;
+      }
+      .ios-blur {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .form-input:focus {
+        border-color: #d4af34 !important;
+        --tw-ring-color: #d4af34;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #ff8fab;
+        border-radius: 10px;
+      }
+
+      /* App View Transition */
+      #app-container > div {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+      #app-container > div.active {
+        display: flex;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-text-main dark:text-slate-100 font-display"
+  >
+    <div
+      id="app-container"
+      class="relative w-full h-screen max-w-md mx-auto shadow-xl overflow-hidden bg-background-light dark:bg-background-dark border-x border-slate-100 dark:border-slate-800"
+    >
+      <!-- Screens will be injected here via JavaScript -->
+    </div>
+
+    <script src="app.js?v=4"></script>
+  </body>
+</html>
